@@ -1,0 +1,101 @@
+
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class  studentperfomance {
+    
+
+    studentperfomance()
+    {
+       
+        JFrame fr=new JFrame(" STUDENT PERFOMANCE ANALYSIS");
+        
+        JLabel lb=new JLabel("ENTER THE NAME OF STUDENT:");
+        lb.setBounds(50,50,200,30);
+        JTextField tf=new JTextField();
+        tf.setBounds(250,50,100,30);
+        JLabel lb2=new JLabel("ENTER THE STUDENT ID:");
+        lb2.setBounds(50,100,200,30);
+        JTextField tf2=new JTextField();
+        tf2.setBounds(250,100,100,30);
+        JLabel lb1=new JLabel("ENTER THE GRADE OBTAINED");
+        lb1.setBounds(50,150,200,30);
+        JTextField tf1=new JTextField();
+        tf1.setBounds(250,150,100,30);
+       
+
+    
+    JButton btn=new JButton("SUBMIT ");
+    btn.setBounds(200,300,100,50);
+    
+    fr.setDefaultCloseOperation(3);
+
+    File f =new File("D:\\java 24\\student.txt");
+    btn.addActionListener(new ActionListener() {
+        
+            public void actionPerformed(ActionEvent e){
+                try (FileWriter f0 = new FileWriter("D:\\java 24\\student.txt")) {
+                    FileWriter f1 = new FileWriter("D:\\java 24\\student.txt");
+                    try (FileWriter f2 = new FileWriter("D:\\java 24\\student.txt")) {
+                        f0.write(tf.getText());
+                        f1.write(tf2.getText());
+                        f2.write(tf1.getText());
+                        f2.close();
+                        f1.close();
+                        f0.close();
+                    } catch (IOException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+               
+                
+            
+            }
+        });
+        
+    
+    
+    
+      
+        
+    
+
+
+
+
+fr.setLayout(null);
+
+fr.setSize(500,500);
+
+fr.setBackground(new Color(57,255,20));
+fr.add(btn);
+
+
+fr.add(lb);
+
+fr.add(tf);
+fr.add(lb1);
+fr.add(tf1);
+fr.add(lb2)
+;
+fr.add(tf2);
+
+fr.setVisible(true);
+
+    }
+
+
+
+    public static void main(String[] args) {
+        new studentperfomance();
+    }
+}
+
+
